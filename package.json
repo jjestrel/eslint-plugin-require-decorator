@@ -4,7 +4,7 @@
         "url": "https://github.com/venuex-io/eslint-plugin-require-decorator/issues"
     },
     "license": "MIT",
-    "name": "@venuex/eslint-plugin-require-decorator",
+    "name": "venuex-eslint-plugin-require-decorator",
     "description": "This is a custom plugin for eslint which enforces the use of decorators on NestJS methods.",
     "homepage": "https://github.com/venuex-io/eslint-plugin-require-decorator#readme",
     "keywords": [

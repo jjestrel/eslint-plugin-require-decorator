@@ -3,13 +3,13 @@
 ## Installation
 
 ```bash
-$ npm install --save-dev @venuex/eslint-plugin-require-decorator
+$ npm install --save-dev venuex-eslint-plugin-require-decorator
 ```
 
 or
 
 ```bash
-$ yarn add -D @venuex/eslint-plugin-require-decorator
+$ yarn add -D venuex-eslint-plugin-require-decorator
 ```
 
 ## Usage
@@ -17,36 +17,27 @@ $ yarn add -D @venuex/eslint-plugin-require-decorator
 ```json
 // .eslintrc
 {
-  "plugins": ["require-decorator"],
-  "rules": {
-    "require-decorator/require-decorator": [
-      1,
-      {
-        "classDecorators": ["Controller"],
-        "methodDecorators": [
-          "ApiOperation",
-          "ApiResponse",
-          {
-            "oneOfThem": [
-              "Get",
-              "Post",
-              "Put",
-              "Delete",
-              "Patch",
-              "Options",
-              "Head",
-              "All"
-            ]
-          }
+    "plugins": ["require-decorator"],
+    "rules": {
+        "require-decorator/require-decorator": [
+            1,
+            {
+                "classDecorators": ["Controller"],
+                "methodDecorators": [
+                    "ApiOperation",
+                    "ApiResponse",
+                    {
+                        "oneOfThem": ["Get", "Post", "Put", "Delete", "Patch", "Options", "Head", "All"]
+                    }
+                ]
+            },
+            {
+                // You can define multiple options
+                "classDecorators": ["Service"],
+                "methodDecorators": ["ServiceDecorator"]
+            }
         ]
-      },
-      {
-        // You can define multiple options
-        "classDecorators": ["Service"],
-        "methodDecorators": ["ServiceDecorator"]
-      }
-    ]
-  }
+    }
 }
 ```
 
@@ -54,31 +45,31 @@ $ yarn add -D @venuex/eslint-plugin-require-decorator
 // any.controller.ts
 @Controller("users")
 class UserController {
-  test!: number;
+    test!: number;
 
-  constructor(test: number) {
-    this.test = test;
-  }
+    constructor(test: number) {
+        this.test = test;
+    }
 
-  @ApiOperation()
-  @Get()
-  // Missing decorators; ApiResponse
-  private getUserById(userId: number): void {
-    return;
-  }
+    @ApiOperation()
+    @Get()
+    // Missing decorators; ApiResponse
+    private getUserById(userId: number): void {
+        return;
+    }
 
-  @ApiOperation()
-  @ApiResponse()
-  // Require one of them; Get || Post || Put || Delete || Patch || Options || Head || All
-  deleteUserById(userId: number): void {
-    return;
-  }
+    @ApiOperation()
+    @ApiResponse()
+    // Require one of them; Get || Post || Put || Delete || Patch || Options || Head || All
+    deleteUserById(userId: number): void {
+        return;
+    }
 
-  @Put()
-  // Missing decorators; ApiOperation, ApiResponse
-  async updateUserById(userId: number): void {
-    return;
-  }
+    @Put()
+    // Missing decorators; ApiOperation, ApiResponse
+    async updateUserById(userId: number): void {
+        return;
+    }
 }
 ```
 
