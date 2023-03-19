@@ -1,33 +1,34 @@
 {
-	"author": "Muhammet Ipek",
-	"bugs": {
-		"url": "https://github.com/ipekmuhammet/eslint-plugin-require-decorator/issues"
-	},
-	"license": "MIT",
-	"name": "eslint-plugin-require-decorator",
-	"description": "This is a custom plugin for eslint which enforces the use of decorators on methods.",
-	"homepage": "https://github.com/ipekmuhammet/eslint-plugin-require-decorator#readme",
-	"keywords": [
-		"eslint",
-		"eslintplugin",
-		"decorator",
-		"typescript"
-	],
-	"version": "0.1.1",
-	"main": "src/index.js",
-	"peerDependencies": {
-		"@typescript-eslint/eslint-plugin": "^2.20.0",
-		"@typescript-eslint/parser": "^2.20.0"
-	},
-	"devDependencies": {
-		"typescript": "^3.8.2",
-		"eslint": "^6.8.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ipekmuhammet/eslint-plugin-require-decorator.git"
-	},
-	"scripts": {
-		"test": "node src/tests.js"
-	}
+    "author": "Muhammet Ipek",
+    "bugs": {
+        "url": "https://github.com/venuex-io/eslint-plugin-require-decorator/issues"
+    },
+    "license": "MIT",
+    "name": "@venuex/eslint-plugin-require-decorator",
+    "description": "This is a custom plugin for eslint which enforces the use of decorators on NestJS methods.",
+    "homepage": "https://github.com/venuex-io/eslint-plugin-require-decorator#readme",
+    "keywords": [
+        "eslint",
+        "eslintplugin",
+        "decorator",
+        "typescript"
+    ],
+    "version": "0.2.0",
+    "main": "src/index.js",
+    "peerDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.50.0",
+        "@typescript-eslint/parser": "^5.50.0"
+    },
+    "devDependencies": {
+        "typescript": "^4.9.0",
+        "eslint": "^8.35.0",
+        "@typescript-eslint/utils": "^5.55.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/venuex-io/eslint-plugin-require-decorator.git"
+    },
+    "scripts": {
+        "test": "node src/tests.js"
+    }
 }

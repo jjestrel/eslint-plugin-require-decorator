@@ -1,14 +1,14 @@
-const { RuleTester } = require("@typescript-eslint/experimental-utils/dist/ts-eslint/RuleTester")
-const { rules } = require("./index")
+const {RuleTester} = require("@typescript-eslint/utils/dist/ts-eslint/RuleTester");
+const {rules} = require("./index");
 
 const ruleTester = new RuleTester({
-	parserOptions: {
-		ecmaVersion: 6,
-		sourceType: "module",
-		ecmaFeatures: {},
-	},
-	parser: require.resolve("@typescript-eslint/parser"),
-})
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: "module",
+        ecmaFeatures: {},
+    },
+    parser: require.resolve("@typescript-eslint/parser"),
+});
 
 const validTest = `
 @Controller("users")
@@ -43,7 +43,7 @@ class UserController {
 		return;
 	}
 }
-`
+`;
 
 const invalidTest = `
 @Controller("users")
@@ -77,52 +77,48 @@ class UserController {
 		return;
 	}
 }
-`
+`;
 
 ruleTester.run("require-decorator", rules["require-decorator"], {
-	valid: [
-		{code: validTest}
-	],
-	invalid: [
-		{
-			code: invalidTest,
-			options: [
-				{
-					classDecorators: [
-						"Controller"
-					],
-					methodDecorators: [
-						"ApiOperation",
-						"ApiResponse",
-						{
-							oneOfThem: ["Get", "Post", "Put", "Delete", "Patch", "Options", "Head", "All"]
-						}
-					]
-				}
-			],
-			errors: [
-				{
-					messageId: "method",
-					data: {
-						method: "getUserById",
-						missingDecorators: "ApiResponse"
-					}
-				},
-				{
-					messageId: "method",
-					data: {
-						method: "deleteUserById",
-						missingDecorators: "Get || Post || Put || Delete || Patch || Options || Head || All"
-					}
-				},
-				{
-					messageId: "method",
-					data: {
-						method: "updateUserById",
-						missingDecorators: "ApiOperation, ApiResponse"
-					}
-				}
-			]
-		}
-	]
-})
+    valid: [{code: validTest}],
+    invalid: [
+        {
+            code: invalidTest,
+            options: [
+                {
+                    classDecorators: ["Controller"],
+                    methodDecorators: [
+                        "ApiOperation",
+                        "ApiResponse",
+                        {
+                            oneOfThem: ["Get", "Post", "Put", "Delete", "Patch", "Options", "Head", "All"],
+                        },
+                    ],
+                },
+            ],
+            errors: [
+                {
+                    messageId: "method",
+                    data: {
+                        method: "getUserById",
+                        missingDecorators: "ApiResponse",
+                    },
+                },
+                {
+                    messageId: "method",
+                    data: {
+                        method: "deleteUserById",
+                        missingDecorators: "Get || Post || Put || Delete || Patch || Options || Head || All",
+                    },
+                },
+                {
+                    messageId: "method",
+                    data: {
+                        method: "updateUserById",
+                        missingDecorators: "ApiOperation, ApiResponse",
+                    },
+                },
+            ],
+        },
+    ],
+});

@@ -3,13 +3,13 @@
 ## Installation
 
 ```bash
-$ npm install --save-dev eslint-plugin-require-decorator
+$ npm install --save-dev @venuex/eslint-plugin-require-decorator
 ```
 
 or
 
 ```bash
-$ yarn add -D eslint-plugin-require-decorator
+$ yarn add -D @venuex/eslint-plugin-require-decorator
 ```
 
 ## Usage
