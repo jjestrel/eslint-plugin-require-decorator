@@ -1,15 +1,15 @@
-# eslint-plugin-require-decorator
+# eslint-plugin-venuex-require-decorator
 
 ## Installation
 
 ```bash
-$ npm install --save-dev venuex-eslint-plugin-require-decorator
+$ npm install --save-dev eslint-plugin-venuex-require-decorator
 ```
 
 or
 
 ```bash
-$ yarn add -D venuex-eslint-plugin-require-decorator
+$ yarn add -D eslint-plugin-venuex-require-decorator
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ $ yarn add -D venuex-eslint-plugin-require-decorator
 {
     "plugins": ["require-decorator"],
     "rules": {
-        "require-decorator/require-decorator": [
+        "venuex-require-decorator/require-decorator": [
             1,
             {
                 "classDecorators": ["Controller"],

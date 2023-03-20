@@ -4,7 +4,7 @@
         "url": "https://github.com/venuex-io/eslint-plugin-require-decorator/issues"
     },
     "license": "MIT",
-    "name": "venuex-eslint-plugin-require-decorator",
+    "name": "eslint-plugin-venuex-require-decorator",
     "description": "This is a custom plugin for eslint which enforces the use of decorators on NestJS methods.",
     "homepage": "https://github.com/venuex-io/eslint-plugin-require-decorator#readme",
     "keywords": [
@@ -13,7 +13,7 @@
         "decorator",
         "typescript"
     ],
-    "version": "0.2.0",
+    "version": "0.0.1",
     "main": "src/index.js",
     "peerDependencies": {
         "@typescript-eslint/eslint-plugin": "^5.50.0",

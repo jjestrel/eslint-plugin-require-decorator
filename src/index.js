@@ -73,7 +73,6 @@ const fixerFn = (missingDecorators) => {
 
 module.exports.rules = {
     "require-decorator": {
-        name: "require-decorator",
         meta: {
             fixable: "code",
             type: "suggestion",
