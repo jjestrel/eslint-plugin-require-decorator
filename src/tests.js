@@ -1,4 +1,5 @@
-const {RuleTester} = require("@typescript-eslint/utils/dist/ts-eslint/RuleTester");
+const {RuleTester} = require("@typescript-eslint/utils/ts-eslint");
+
 const {rules} = require("./index");
 
 const ruleTester = new RuleTester({
@@ -54,7 +55,41 @@ class UserController {
 		this.test = test;
 	}
 
-	@ApiOperation()
+\t@ApiOperation()
+	@Get()
+	private getUserById(
+		userId: number
+	): void {
+		return;
+	}
+
+\t@ApiOperation()
+\t@ApiResponse()
+	deleteUserById(
+		userId: number
+	): void {
+		return;
+	}
+
+	@Put()
+	async updateUserById(
+		userId: number
+	): void {
+		return;
+	}
+}
+`;
+const fixedInvalidTest = `
+@Controller("users")
+class UserController {
+	test!: number;
+
+	constructor(test: number) {
+		this.test = test;
+	}
+
+	@ApiResponse()
+@ApiOperation()
 	@Get()
 	private getUserById(
 		userId: number
@@ -70,7 +105,9 @@ class UserController {
 		return;
 	}
 
-	@Put()
+	@ApiOperation()
+@ApiResponse()
+@Put()
 	async updateUserById(
 		userId: number
 	): void {
@@ -119,6 +156,7 @@ ruleTester.run("require-decorator", rules["require-decorator"], {
                     },
                 },
             ],
+            output: fixedInvalidTest,
         },
     ],
 });

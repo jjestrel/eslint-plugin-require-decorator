@@ -66,7 +66,7 @@ const fixerFn = (missingDecorators) => {
                 return ""; // decorator.oneOfThem.map(oneOfDecorator => `@${oneOfDecorator}() \r\n `).join("") // TODO fix others and in oneOfThem suggest oneOfThem :)
             }
 
-            return `@${decorator}() \r\n `;
+            return `@${decorator}()\n`;
         })
         .join("");
 };
